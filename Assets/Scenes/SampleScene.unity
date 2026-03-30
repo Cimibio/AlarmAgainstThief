@@ -436,6 +436,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 848801123}
+  - component: {fileID: 848801125}
+  - component: {fileID: 848801124}
   m_Layer: 0
   m_Name: Alarm
   m_TagString: Untagged
@@ -458,6 +460,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &848801124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848801122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4ec62122c8cfd344a5b5791c77f243d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &848801125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848801122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99be08d8d5d911e4699c12f9c9c53de5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioSource: {fileID: 1253717693}
+  _alarmDetector: {fileID: 848801124}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0

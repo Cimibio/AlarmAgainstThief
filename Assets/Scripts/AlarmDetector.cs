@@ -1,18 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class AlarmDetector : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public event Action ThiefEntered;
+    public event Action ThiefExited;
+
+    private void OnCollisionEnter(Collision collision)
     {
-        
+        if (!collision.gameObject.TryGetComponent<Thief>(out _))
+            return;
+
+        ThiefEntered?.Invoke();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionExit(Collision collision)
     {
-        
+        if (!collision.gameObject.TryGetComponent<Thief>(out _))
+            return;
+
+        ThiefExited?.Invoke();
     }
 }
