@@ -8,7 +8,6 @@ public class AlarmDetector : MonoBehaviour
     public event Action ThiefEntered;
     public event Action ThiefExited;
 
-
     private void Start()
     {
         if (TryGetComponent(out Collider collider))
