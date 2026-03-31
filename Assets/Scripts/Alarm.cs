@@ -8,7 +8,7 @@ public class Alarm : MonoBehaviour
     [SerializeField] private float _maxVolume = 1.0f;
     [SerializeField] private float _fadeTime = 3.0f;
 
-    private Coroutine _changeVolumeCoroutine;
+    private Coroutine _changeVolume;
 
     private void OnEnable()
     {
@@ -37,10 +37,10 @@ public class Alarm : MonoBehaviour
 
     private void ResetCoroutine(float target)
     {
-        if (_changeVolumeCoroutine != null)
-            StopCoroutine(_changeVolumeCoroutine);
+        if (_changeVolume != null)
+            StopCoroutine(_changeVolume);
 
-        _changeVolumeCoroutine = StartCoroutine(ChangeVolume(target));
+        _changeVolume = StartCoroutine(ChangeVolume(target));
     }
 
     private IEnumerator ChangeVolume(float target)
