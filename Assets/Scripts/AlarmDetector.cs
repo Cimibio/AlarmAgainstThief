@@ -3,22 +3,30 @@ using UnityEngine;
 
 public class AlarmDetector : MonoBehaviour
 {
+    private Collider _houseCollider;
+
     public event Action ThiefEntered;
     public event Action ThiefExited;
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (!collision.gameObject.TryGetComponent<Thief>(out _))
-            return;
 
-        ThiefEntered?.Invoke();
+    private void Start()
+    {
+        if (TryGetComponent(out Collider collider))
+        {
+            _houseCollider = collider;
+            _houseCollider.isTrigger = true;
+        }
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerEnter(Collider collider)
     {
-        if (!collision.gameObject.TryGetComponent<Thief>(out _))
-            return;
+        if (collider.TryGetComponent<Thief>(out _))
+            ThiefEntered?.Invoke();
+    }
 
-        ThiefExited?.Invoke();
+    private void OnTriggerExit(Collider collider)
+    {
+        if (collider.TryGetComponent<Thief>(out _))
+            ThiefExited?.Invoke();
     }
 }
