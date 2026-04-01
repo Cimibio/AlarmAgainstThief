@@ -7,6 +7,7 @@ public class Alarm : MonoBehaviour
     [SerializeField] private float _maxVolume = 1.0f;
     [SerializeField] private float _fadeTime = 3.0f;
 
+    private float _minVolume = 0f;
     private AlarmDetector _alarmDetector;
     private Coroutine _changeVolume;
 
@@ -38,7 +39,7 @@ public class Alarm : MonoBehaviour
 
     private void StopAlarm()
     {
-        ResetCoroutine(0f);
+        ResetCoroutine(_minVolume);
     }
 
     private void ResetCoroutine(float target)
