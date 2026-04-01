@@ -4,11 +4,17 @@ using System.Collections;
 public class Alarm : MonoBehaviour
 {
     [SerializeField] private AudioSource _audioSource;
-    [SerializeField] private AlarmDetector _alarmDetector;
     [SerializeField] private float _maxVolume = 1.0f;
     [SerializeField] private float _fadeTime = 3.0f;
 
+    private AlarmDetector _alarmDetector;
     private Coroutine _changeVolume;
+
+    private void Awake()
+    {
+        if (TryGetComponent(out AlarmDetector alarmDetector))
+            _alarmDetector = alarmDetector;
+    }
 
     private void OnEnable()
     {
@@ -51,7 +57,7 @@ public class Alarm : MonoBehaviour
             yield return null;
         }
 
-        if (target == 0) 
+        if (target == 0)
             _audioSource.Stop();
     }
 }

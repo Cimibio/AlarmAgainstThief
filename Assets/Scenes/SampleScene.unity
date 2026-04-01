@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 271739660}
   - component: {fileID: 271739664}
   - component: {fileID: 271739665}
+  - component: {fileID: 271739666}
   m_Layer: 0
   m_Name: House
   m_TagString: Untagged
@@ -198,7 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c319e0e9ec08d13488901bb6c1a0a88f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _alarm: {fileID: 848801125}
+  _alarm: {fileID: 0}
 --- !u!114 &271739665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,6 +212,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4ec62122c8cfd344a5b5791c77f243d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &271739666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271739659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99be08d8d5d911e4699c12f9c9c53de5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioSource: {fileID: 1253717693}
+  _maxVolume: 1
+  _fadeTime: 3
 --- !u!1 &688091738
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,55 +427,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &848801122
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 848801123}
-  - component: {fileID: 848801125}
-  m_Layer: 0
-  m_Name: Alarm
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &848801123
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 848801122}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1253717694}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &848801125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 848801122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99be08d8d5d911e4699c12f9c9c53de5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _audioSource: {fileID: 1253717693}
-  _alarmDetector: {fileID: 271739665}
-  _maxVolume: 1
-  _fadeTime: 3
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,7 +793,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 848801123}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -837,4 +804,4 @@ SceneRoots:
   - {fileID: 688091742}
   - {fileID: 271739663}
   - {fileID: 1228035537}
-  - {fileID: 848801123}
+  - {fileID: 1253717694}
